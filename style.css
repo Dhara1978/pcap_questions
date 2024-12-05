@@ -1,0 +1,60 @@
+body {
+	font-family: Verdana;
+	}
+	
+.heading {
+	font-family: Verdana;
+	color: #FFFFFF;
+	background-color: #0D6EFD;
+	padding: 10px;
+	border-radius: 25px;
+	}
+
+h1, h2 {
+	padding: 15px;
+	}
+
+table {
+	padding: 15px;
+	}
+
+th {
+	font-weight: bold;
+	padding: 15px;
+	padding-top: 5px;
+	text-align: left;
+	}
+	
+td {
+	padding: 15px;
+	padding-top: 5px;
+	text-align: left;
+	}
+	
+ul {
+	list-style-type: none;
+	}
+	
+li {
+	padding: 5px;
+	}
+
+input[type=radio] { 
+	margin-right: 20px; 
+	}
+	
+input[type=checkbox] { 
+	margin-right: 20px; 
+	}
+	
+button {
+	font-size: 16px;
+	font-family: Verdana;
+	color: #FFFFFF;
+	background-color: #0D6EFD;
+	padding: 10px;	
+	border-radius: 10px;
+	display: block; 
+	margin: 0 auto; 
+	}
+	

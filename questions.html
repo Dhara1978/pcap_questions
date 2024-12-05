@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCAP Questions</title>
+  <link rel="stylesheet" href="style.css">
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const data = {
+    "questions": [
+      {
+        "question": "Is it possible to safely check if a class/object has a certain attribute?", 
+        "choices": ["yes, by using the hasattr attribute", 
+                    "yes, by using the hasattr ( ) method", 
+                    "yes, by using the hassattr ( ) function", 
+                    "is set by the first argument's value"], 
+        "correct": [1]
+      },
+      {
+        "question": "The first parameter of each method:", 
+        "choices": ["holds a reference to the currently processed object", 
+                    "is always set to None", 
+                    "is set to a unique random value", 
+                    "is set by the first argument's value"], 
+        "correct": [3]
+      },
+      {
+        "question": "The simplest possible class definition in Python can be expressed as:", 
+        "choices": ["class X:", 
+                    "class X: pass", 
+                    "class X: return", 
+                    "class X: { }"], 
+        "correct": [0]
+      },
+      {
+        "question": "If you want to access an exception object's components and store them in an object called e, you have to use the following form of exception statement:",
+        "choices": ["except Exception (e) :",
+                    "except e= Exception :",
+                    "except Exception as e:",
+                    "such an action is not possible in Python"],
+        "correct": [2]
+      },
+      {
+        "question": "A variable stored separately in every object is called:",
+        "choices": ["there are no such variables, all variables are shared among objects",
+                    "a class variable",
+                    "an object variable",
+                    "an instance variable"],
+        "correct": [3]
+      },
+      {
+        "question": "You are going to read just one character from a stream called s. Which statement would you use?",
+        "choices": ["ch = read (s, 1)",
+                    "ch= s.input (1)",
+                    "ch= input (s, 1)",
+                    "ch= s.read (1)"],
+        "correct": [3]
+      },
+      {
+        "question": "Assuming that String is six or more letters long, the following slice: string[1:-2] is shorter than the original string by:",
+        "choices": ["four chars",
+                    "three chars",
+                    "one char",
+                    "two chars"],
+        "correct": [3]
+      },
+      {
+        "question": "Which of the following literals reflect the value given as 34.23? (Choose two.)",
+        "choices": [".3423e2",
+                    "3423e-2",
+                    ".3423e-2",
+                    "3423e2"],
+        "correct": [0, 1]
+      },
+      {
+        "question": "A compiler is a program designed to (Choose two.)",
+        "choices": ["rearrange the source code to make it clearer",
+                    "check the source code in order to see of it's correct",
+                    "execute the source code",
+                    "translate the source code into machine code"],
+        "correct": [1, 3]
+      },
+      {
+        "question": "Which of the following statements are true? (Choose two.)",
+        "choices": ["Python strings are actually lists",
+                    "Python strings can be concatenated",
+                    "Python strings can be sliced like lists",
+                    "Python strings are mutable"],
+        "correct": [1, 2]
+      },
+      {
+        "question": "Which of the following sentences are true? (Choose two.)",
+        "choices": ["Lists may not be stored inside tuples",
+                    "Tuples may be stored inside lists",
+                    "Tuples may not be stored inside tuples",
+                    "Lists may be stored inside lists"],
+        "correct": [1, 3]
+      },
+      {
+        "question": "You need data which can act as a simple telephone directory. You can obtain it with the following clauses (Choose two.) (assume that no other items have been created before)",
+        "choices": ["dir={'Mom': 5551234567, 'Dad': 5557654321}",
+                    "dir= {'Mom': '5551234567', 'Dad': '5557654321'}",
+                    "dir= {Mom: 5551234567, Dad: 5557654321}",
+                    "dir= {Mom: '5551234567', Dad: '5557654321'}"],
+        "correct": [0, 1]
+      },
+      // Add more questions here if needed
+    ]
+  };
+
+  function getRandomQuestions(arr, num) {
+    const shuffled = arr.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  }
+
+  const selectedQuestions = getRandomQuestions(data.questions, 10);
+
+  selectedQuestions.forEach((q, index) => {
+    const questionContainer = document.createElement('div');
+    questionContainer.classList.add('question-container');
+
+    const questionElement = document.createElement('h2');
+    questionElement.textContent = q.question;
+    questionContainer.appendChild(questionElement);
+
+    const choicesList = document.createElement('ul');
+    q.choices.forEach((choice, choiceIndex) => {
+      const li = document.createElement('li');
+      
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = q.correct.length > 1 ? 'checkbox' : 'radio';
+      input.name = `question${index}`;
+      input.value = choiceIndex;
+
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(choice));
+      li.appendChild(label);
+      choicesList.appendChild(li);
+    });
+
+    questionContainer.appendChild(choicesList);
+    document.body.appendChild(questionContainer);
+    
+    const hr = document.createElement('hr');
+    document.body.appendChild(hr);
+  });
+
+  const submitButton = document.createElement('button');
+  submitButton.textContent = 'Submit';
+  document.body.appendChild(submitButton);
+
+  submitButton.addEventListener('click', () => {
+    let score = 0;
+    selectedQuestions.forEach((q, index) => {
+      const selected = document.querySelectorAll(`input[name="question${index}"]:checked`);
+      const selectedValues = Array.from(selected).map(input => parseInt(input.value));
+
+      if (q.correct.every(value => selectedValues.includes(value)) && selectedValues.length === q.correct.length) {
+        score++;
+      }
+    });
+    alert(`Your score is ${score} out of ${selectedQuestions.length}`);
+  });
+});
+</script>
+
+  <style>
+    .question-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+	<div class = "heading">
+		<h1>Python Institute</h1>
+		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div>
+		<h2>PCAP™: Exam Information</h2>
+		<hr>
+		<table>
+			<tr>
+				<th>SPECIFICATIONS ITEM</th>
+				<th>DESCRIPTION</th>
+			</tr>
+			<tr>
+				<td>Exam Duration</td>
+				<td>Exam: 65 minutes, NDA/Tutorial: 10 minutes</td>
+			</tr>
+
+			<tr>
+				<td>Number of Questions</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>Passing Score</td>
+				<td>70%</td>
+			</tr>
+		</table>
+		<hr>
+	</div>
+</body>
+</html>
