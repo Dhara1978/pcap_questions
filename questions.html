@@ -66,6 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "correct": [3]
       },
       {
+        "question": "The __bases__ property contains:",
+        "choices": ["base class location (addr)",
+                    "base class objects (class)",
+                    "base class names (str)",
+                    "base class ids (int)"],
+        "correct": [1]
+      },
+      {
+        "question": "Python's built-in function named open () tries to open a file and returns:",
+        "choices": ["an integer value identifying an opened file",
+                    "an error code (0 means success)",
+                    "a stream object",
+                    "always None"],
+        "correct": [2]
+      },
+	  //questions with multiple answers
+      {
         "question": "Which of the following literals reflect the value given as 34.23? (Choose two.)",
         "choices": [".3423e2",
                     "3423e-2",
@@ -105,24 +122,124 @@ document.addEventListener('DOMContentLoaded', () => {
                     "dir= {Mom: '5551234567', Dad: '5557654321'}"],
         "correct": [0, 1]
       },
+      {
+        "question": "And operator able to perform bitwise shifts is coded as (Choose two.)",
+        "choices": ["--",
+                    "++",
+                    "<<",
+                    ">>"],
+        "correct": [2, 3]
+      },
+      {
+        "question": "A class constructor (Choose two.)",
+        "choices": ["can return a value",
+                    "cannot be invoked directly from inside the class",
+                    "can be invoked directly from any of the subclasses",
+                    "can be invoked directly from any of the superclasses"],
+        "correct": [1, 2]
+      },
+	  //multi line questions
+      {
+        "question": "Assuming that the following snippet has been successfully executed, which of the equations are True? (Choose two.)<br>\
+					<br>\
+					a = [1]<br>\
+					b = a<br>\
+					a[0] = 0<br>\
+					",
+        "choices": ["len(a) == len (b)",
+                    "b[0] + 1 == a[0]",
+                    "a[0] == b[0]",
+                    "a[0] + 1 == b[0]"],
+        "correct": [0, 2]
+      },
+	  {
+		"question": "What is the expected output of the following code?<br>\
+					<br>\
+					import sys<br>\
+		            import math<br>\
+					b1 = type(dir(math)) is list<br>\
+					b2 = type(sys.path) is list<br>\
+					print(b1 and b2)",
+		"choices": ["None",
+					"True",
+					"0",
+					"False"],
+		  "correct": [1]
+	  },
+	  {
+		"question": "Assuming that String is six or more letters long, the following slice<br>\
+					<br>\
+					str[1:2]<br>\
+		            <br>\
+					is shorter than the original string by:",
+		"choices": ["four chars",
+					"three chars",
+					"one char",
+					"two chars"],
+		  "correct": [1]
+	  },
+	  //questions with images
+	  {
+		"question": "What is the expected output of the following snippet?",
+		"choices": ["the code is erroneous",
+					"3",
+					"7",
+					"15"],
+		"correct": [0],
+		"image": "pcap_question_image1.PNG"  // Add image URL here  
+	  },
+	  {
+		"question": "How many lines does the following snippet output?",
+		"choices": ["three",
+					"one",
+					"two",
+					"four"],
+		"correct": [1],
+		"image": "pcap_question_image2.PNG"  // Add image URL here  
+	  },
+	  {
+		"question": "The following class hierarchy is given. What is the expected output of the code?",
+		"choices": ["BB",
+					"CC",
+					"AA",
+					"BC"],
+		"correct": [3],
+		"image": "pcap_question_image3.PNG"  // Add image URL here  
+	  },
+	  {
+		"question": "What is the expected output of the following snippet?",
+		"choices": ["abc",
+					"The code will cause a runtime exception",
+					"ABC",
+					"123"],
+		"correct": [1],
+		"image": "pcap_question_image4.PNG"  // Add image URL here  
+	  }
       // Add more questions here if needed
     ]
-  };
+  }; 
 
   function getRandomQuestions(arr, num) {
     const shuffled = arr.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }
 
-  const selectedQuestions = getRandomQuestions(data.questions, 10);
+  const selectedQuestions = getRandomQuestions(data.questions, 20);
 
   selectedQuestions.forEach((q, index) => {
     const questionContainer = document.createElement('div');
     questionContainer.classList.add('question-container');
 
     const questionElement = document.createElement('h2');
-    questionElement.textContent = q.question;
+    questionElement.innerHTML = q.question;
     questionContainer.appendChild(questionElement);
+
+    if (q.image) {
+      const imageElement = document.createElement('img');
+      imageElement.src = q.image;
+      imageElement.alt = 'Question related image';
+      questionContainer.appendChild(imageElement);
+    }
 
     const choicesList = document.createElement('ul');
     q.choices.forEach((choice, choiceIndex) => {
@@ -166,11 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-  <style>
-    .question-container {
-      margin-bottom: 20px;
-    }
-  </style>
 </head>
 <body>
 	<div class = "heading">
