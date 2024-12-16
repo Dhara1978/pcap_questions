@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCAP Index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class = "heading">
+		<h1>Python Institute</h1>
+		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div class="nav_div">
+		<ul class="nav_ul">
+			<li class="nav_li"><a href="index.html">Section 1</a></li>
+			<li class="nav_li"><a href="section2.html" class="active">Section 2</a></li>
+			<li class="nav_li"><a href="section3.html">Section 3</a></li>
+			<li class="nav_li"><a href="section4.html">Section 4</a></li>
+			<li class="nav_li"><a href="section5.html">Section 5</a></li>
+			<li class="nav_li"><a href="questions.html">Take a Test</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h2>Section 2: Exceptions (14%)</h2>
+		<div>
+			<div class="section_notes">
+				<h3>Handle Errors Using Python-Defined Exceptions</h3>
+				<p>except:</p>
+				<ul>
+					<li>Used to catch exceptions</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="grey_font"># code that may cause an exception</span>:</p>
+						<p><span class="blue_font">except</span>:</p>
+						<p>&emsp;<span class="grey_font"># handle the exception</span>:</p>
+					</div>	
+				</ul>
+				<p>except: - else:</p>
+				<ul>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="grey_font"># code that may cause an exception</span>:</p>
+						<p><span class="blue_font">except</span>:</p>
+						<p>&emsp;<span class="grey_font"># handle the exception</span>:</p>
+						<p><span class="blue_font">else</span>:</p>
+						<p>&emsp;<span class="grey_font"># execute if no exceptions occurred</span>:</p>
+					</div>
+				</ul>	
+				<p>except (e1, e2):</p>
+				<ul>
+					<li>Catches multiple exceptions</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="grey_font"># code that may cause an exception</span>:</p>
+						<p><span class="blue_font">except</span>(TypeError, ValueError):</p>
+						<p>&emsp;<span class="grey_font"># handle TypeError and ValueError</span>:</p>
+					</div>
+				</ul>
+				<p>import \*:</p>
+			</div>
+			<div class="section_notes">
+				<h3>The Hierarchy of Exceptions</h3>
+				<ul>
+					<li>Python exceptions are organized into a hierarchy with BaseException at the top</li>
+					<li>Commonly used exceptions include Exception, ArithmeticError, LookupError, and more</li>
+					<div class="code_example">
+						<p>BaseException</p>
+						<p>|--SystemExit</p>
+						<p>|--KeyboardInterrupt</p>
+						<p>|__Exception</p>
+						<p>&emsp;|--StopIteration</p>
+						<p>&emsp;|--ArithmaticError</p>
+						<p>&emsp;|__ ...</p>
+					</div>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>raise, raise ex</h3>
+				<ul>
+					<li>Used to manually raise an exception</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">raise</span> ValueError(<span class="green_font">"An error occurred"</span>)</p>
+						<p><span class="yellow_font">print</span>(<span class="yellow_font">dir</span>(math))</p>
+					</div>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>assert</h3>
+				<ul>
+					<li>Used to debug code by testing conditions</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">assert</span> x > 0, <span class="green_font">"x must be greater than 0"</span></p>
+					</div>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>except E as e</h3>
+				<ul>
+					<li>Catches an exception and assigns it to a variable</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="grey_font"># code that may cause an exception</span>:</p>
+						<p><span class="blue_font">except</span> ValueError <span class="blue_font">as</span> e:</p>
+						<p>&emsp;<span class="yellow_font">print</span>(e)</p>
+					</div>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>The args Property</h3>
+				<ul>
+					<li>The args property contains the arguments passed to the exception</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="blue_font">raise</span> ValueError(<span class="green_font">"Invalid value"</span>)</p>
+						<p><span class="blue_font">except</span> ValueError <span class="blue_font">as</span> e:</p>
+						<p>&emsp;<span class="yellow_font">print</span>(e.args)</p>
+					</div>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>Extend the Python Exceptions Hierarchy with Self-Defined Exceptions</h3>
+				<ul>
+					<h3>Self-Defined Exceptions</h3>
+					<li>Create custom exception classes by inheriting from existing exceptions</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">class </span><span class="purple_font">CustomError</span>(<span class="purple_font">Exception</span>):</p>
+						<p>&emsp;<span class="blue_font">pass</span></p>
+					</div>
+				</ul>
+				<ul>
+					<h3>Defining and Using Self-Defined Exceptions</h3>
+					<li>Define a custom exception and raise it as needed</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">class </span><span class="purple_font">CustomError</span>(<span class="purple_font">Exception</span>):</p>
+						<p>&emsp;<span class="blue_font">def </span><span class="purple_font">__init__</span>(self, message)</p>
+						<p>&emsp;&emsp;<span class="orange_font">self</span>.message = message</p><br>
+						<p><span class="blue_font">try</span>:</p>
+						<p>&emsp;<span class="blue_font">raise</span> CustomError(<span class="green_font">"This is a custom error"</span>)</p>
+						<p><span class="blue_font">except</span> CustomError(<span class="green_font">"This is a custom error"</span>)</p>
+						<p>&emsp;<span class="yellow_font">print</span>(e.message)</p>
+					</div>
+				</ul>
+			</div>			
+		<div>
+	</div>
+</body>
+</html>
