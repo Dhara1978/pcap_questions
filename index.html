@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCAP Index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class = "heading">
+		<h1>Python Institute</h1>
+		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div class="nav_div">
+		<ul class="nav_ul">
+			<li class="nav_li"><a href="index.html" class="active">Section 1</a></li>
+			<li class="nav_li"><a href="section2.html">Section 2</a></li>
+			<li class="nav_li"><a href="section3.html">Section 3</a></li>
+			<li class="nav_li"><a href="section4.html">Section 4</a></li>
+			<li class="nav_li"><a href="section5.html">Section 5</a></li>
+			<li class="nav_li"><a href="questions.html">Take a Test</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h2>Section 1: Modules and Packages (12%)</h2>
+		<div>
+			<div class="section_notes">
+				<h3>Import Variants in Python</h3>
+				<p>import:</p>
+				<ul>
+					<li>Used to import an entire module</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">import</span> math</p>
+						<p><span class="yellow_font">print</span>(math.sqrt(<span class="orange_font">16</span>))  <span class="grey_font"># Output: 4.0</span></p>
+					</div>	
+				</ul>
+				<p>from import:</p>
+				<ul>
+					<li>Used to import specific functions or variables from a module</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">from</span> math <span class="blue_font">import</span> sqrt</p>
+						<p><span class="yellow_font">print</span>(sqrt(<span class="orange_font">16</span>))  <span class="grey_font"># Output: 4.0</span></p>
+					</div>
+				</ul>	
+				<p>import as:</p>
+				<ul>
+					<li>Used to give a module or function an alias</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">import</span> math <span class="blue_font">as</span> m</p>
+						<p><span class="yellow_font">print</span>(m.sqrt(<span class="orange_font">16</span>))  <span class="grey_font"># Output: 4.0</span></p>
+					</div>
+				</ul>
+				<p>import \*:</p>
+				<ul>
+					<li>Imports everything from a module</li>
+					<li>Not recommended for larger modules to avoid name conflicts</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">from</span> math <span class="blue_font">import</span> *</p>
+						<p><span class="yellow_font">print</span>(sqrt(<span class="orange_font">16</span>))  <span class="grey_font"># Output: 4.0</span></p>
+					</div>	
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>Advanced Qualifying for Nested Modules</h3>
+				<ul>
+					<li>You can use <span class="blue_font">from</span> to import nested modules</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">from</span> package.subpackage <span class="blue_font">import</span> module</p>
+						<p><span class="grey_font"># Accessing functions from the nested module</span></p>
+						<p>module.function()</p>
+					</div>
+					<li>Alternatively, you can use <span class="blue_font">import</span> for more explicit imports
+					<div class="code_example">
+						<p><span class="blue_font">import</span> package.subpackage.module</p>
+						<p><span class="grey_font"># Accessing functions from the nested module</span></p>
+						<p>package.subpackage.module.function()</p>
+					</div>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>The <span class="blue_font">dir()</span> function</h3>
+				<ul>
+					<li>Used to list the names of the attributes and methods in a module</li>
+					<li>Provides an overview of what’s available within a module</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">import</span> math</p>
+						<p><span class="yellow_font">print</span>(<span class="yellow_font">dir</span>(math))</p>
+					</div>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>The sys.path Varaible</h3>
+				<ul>
+					<li>Lists the directories Python searches for modules</li>
+					<li>You can append to this list to add new directories for module searching</li>
+					<p>Example:</p>
+					<div class="code_example">
+						<p><span class="blue_font">import</span> sys</p>
+						<p><span class="yellow_font">print</span>(sys.path)   <span class="grey_font"># Output the list of paths</span></p><br>
+						<p><span class="grey_font"># Adding a new path</span></p>
+						<p>sys.path.append(<span = class="green_font">'/new/path/to/modules'</span>)
+					</div>
+				</ul>
+			</div>				
+		<div>
+	</div>
+</body>
+</html>
