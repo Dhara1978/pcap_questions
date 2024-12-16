@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "class X: pass", 
                     "class X: return", 
                     "class X: { }"], 
-        "correct": [0]
+        "correct": [1]
       },
       {
         "question": "If you want to access an exception object's components and store them in an object called e, you have to use the following form of exception statement:",
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "three chars",
                     "one char",
                     "two chars"],
-        "correct": [3]
+        "correct": [1]
       },
       {
         "question": "The __bases__ property contains:",
@@ -80,6 +80,136 @@ document.addEventListener('DOMContentLoaded', () => {
                     "a stream object",
                     "always None"],
         "correct": [2]
+      },
+      {
+        "question": "What is the primary purpose of the `with open()` statement in Python?",
+        "choices": [
+            "To open a file and automatically close it when the block is exited.",
+            "To create a new file.",
+            "To read the entire contents of a file into memory.",
+            "To write data to a file."
+        ],
+        "correct": [0]
+      },
+      {
+        "question": "Which of the following is NOT a valid way to define a function in Python?",
+        "choices": [
+            "def my_function():",
+            "def my_function(arg1, arg2):",
+            "function my_function():",
+            "lambda x: x**2"
+        ],
+        "correct": [2]
+      },
+      {
+        "question": "What is the output of the following code? `print(type(5))`",
+        "choices": [
+            "<class 'int'>",
+            "<class 'float'>",
+            "<class 'str'>",
+            "<class 'bool'>"
+        ],
+        "correct": [0]
+      },
+      {
+        "question": "How do you comment out a single line of code in Python?",
+        "choices": [
+            "// This is a comment",
+            "# This is a comment",
+            "/* This is a comment */",
+            ""
+        ],
+        "correct": [1]
+      },
+      {
+        "question": "What is the result of `2 ** 3`?",
+        "choices": [
+            "5",
+            "6",
+            "8",
+            "9"
+        ],
+        "correct": [2]
+      },
+      {
+        "question": "Which data structure in Python is used to store key-value pairs?",
+        "choices": [
+            "List",
+            "Tuple",
+            "Set",
+            "Dictionary"
+        ],
+        "correct": [3]
+      },
+      {
+        "question": "What is the correct way to import the `math` module in Python?",
+        "choices": [
+            "import math",
+            "include math",
+            "use math",
+            "require math"
+        ],
+        "correct": [0]
+      },
+      {
+        "question": "What is the output of the following code? `print(len('hello world'))`",
+        "choices": [
+            "5",
+            "10",
+            "11",
+            "12"
+        ],
+        "correct": [2]
+      },
+      {
+        "question": "What is the purpose of the `try-except` block in Python?",
+        "choices": [
+            "To handle potential errors and exceptions.",
+            "To define a function.",
+            "To create a loop.",
+            "To import modules."
+        ],
+        "correct": [0]
+      },
+	  {
+        "question": "How do you create an empty list in Python?",
+        "choices": [
+            "[]",
+            "{}",
+            "()",
+            "<>"
+        ],
+        "correct": [0]
+	  },
+      {
+		"question": "What is true about how python looks for modules/packages?",
+		"choices": [
+			"The directory from which the code has been run is always searched through",
+		    "The directory from which the code has been run is never searched through",
+		    "The code from which the code has been run must not contain any modules",
+		    "The directory from which the code has been run is searched through upon the user's request"
+		],
+		"correct": [0]
+      },
+      {
+		"question": "What is true about the built-in dir() mechanism in the context of modules and packages?",
+		"choices": [
+			"It is a method which can be invoked with a module passed as an argument in order to obtain the module content",
+		    "It is a function which can be invoked with a module passed as argument in order to obtain the module content",
+		    "It is a list contained by a module reflecting the module contents",
+		    "It is a dictionary contained by a module reflecting the module contents"
+			],
+		"correct": [1]
+      },
+      {
+		"question": "The system that allows you to diagnose input/output errors in Python is called?",
+		"choices": [
+			"error_string",
+		    "errcode",
+		    "errno",
+		    "error_number"
+			],
+		"correct": [2]
       },
 	  //questions with multiple answers
       {
@@ -174,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					is shorter than the original string by:",
 		"choices": ["four chars",
 					"three chars",
-					"one char",
+					"five chars",
 					"two chars"],
 		  "correct": [1]
 	  },
@@ -214,7 +344,29 @@ document.addEventListener('DOMContentLoaded', () => {
 					"123"],
 		"correct": [1],
 		"image": "pcap_question_image4.PNG"  // Add image URL here  
-	  }
+	  },
+      {
+		"question": "The following code snippet is used to import and invoke the c() function. What is always true about the function and it's environment? (Choose two.)",
+		"choices": [
+			"The c() function can also be invoked in the following way c()",
+		    "The c() function can also be invoked in the following way b.c()",
+		    "The b component is a module, and it is containedinside the a package, or is a submodule of a",
+		    "The c() function is contained in the b module"
+			],
+		"correct": [2, 3],
+		"image": "pcap_question_image5.PNG"  // Add image URL here  
+	},
+    {
+		"question": "What is the expected output of the following code?",
+		"choices": [
+			"[3]",
+		    "[2]",
+		    "[1]",
+		    "[]"
+			],
+	"correct": [1],
+	"image": "pcap_question_image6.PNG"  // Add image URL here  
+	},
       // Add more questions here if needed
     ]
   }; 
@@ -288,6 +440,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class = "heading">
 		<h1>Python Institute</h1>
 		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div class="nav_div">
+		<ul class="nav_ul">
+			<li class="nav_li"><a href="index.html">Section 1</a></li>
+			<li class="nav_li"><a href="section2.html">Section 2</a></li>
+			<li class="nav_li"><a href="section3.html">Section 3</a></li>
+			<li class="nav_li"><a href="section4.html">Section 4</a></li>
+			<li class="nav_li"><a href="section5.html">Section 5</a></li>
+			<li class="nav_li"><a href="questions.html" class="active">Take a Test</a></li>
+		</ul>
 	</div>
 	<div>
 		<h2>PCAP™: Exam Information</h2>
