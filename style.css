@@ -140,3 +140,21 @@ img {
 .sub_list {
 	list-style-type: circle;
 	}
+	
+/* Change color of correct answers after submit not currently used*/ 	
+.correct {
+	color: #FFFFFF
+	background-color: #10EF47
+	}
+	
+button {
+	font-size: 16px;
+	font-family: Verdana;
+	text-align:center;
+	color: #FFFFFF;
+	background-color: #0D6EFD;
+	padding: 10px;
+	border-radius: 10px;
+	display: block; 
+	margin: 10px auto; 	
+	}
