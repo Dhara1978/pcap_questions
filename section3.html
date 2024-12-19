@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCAP Index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class = "heading">
+		<h1>Python Institute</h1>
+		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div class="nav_div">
+		<ul class="nav_ul">
+			<li class="nav_li"><a href="index.html">Section 1</a></li>
+			<li class="nav_li"><a href="section2.html">Section 2</a></li>
+			<li class="nav_li"><a href="section3.html">Section 3</a></li>
+			<li class="nav_li"><a href="section4.html">Section 4</a></li>
+			<li class="nav_li"><a href="section5.html" class="active">Section 5</a></li>
+			<li class="nav_li"><a href="questions.html">Take a Test</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h2>Section 3: Strings (18%)</h2>
+		<div>
+			<div class="section_notes">
+				<h3>Understand Machine Representation of Characters</h3>
+				<ul>
+					<li><b>Encoding Standards:</b>
+						<li><b>ASCII (American Standard Code for Information Interchange):</b> Represents characters using 7-bit binary numbers. It includes English letters, digits, and some special characters</li>
+						<li><b>UNICODE:</b> A standard that aims to represent every character from every language. It uses a variety of encoding forms like UTF-8, UTF-16, and UTF-32</li>
+						<li><b>UTF-8 (Unicode Transformation Format-8):</b> An encoding standard that uses one to four bytes for each character, compatible with ASCII for the first 128 characters</li>
+						<li><b>Code Points:</b> The unique number assigned to each character in the Unicode standard</li>
+						<li><b>Escape Sequences:</b> Special characters in strings introduced by a backslash (e.g., \n for newline, \t for tab)</li>
+					</li>
+				<ul>
+			<div class="section_notes">
+				<h3>Operate on Strings</h3>
+				<ul>
+					<li><b>Functions:</b>
+						<ul>
+							<li class="sub_list">ord(): Returns the Unicode code point for a given character</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="yellow_font">ord</span>(<span class="green_font">'a'</span>)<span class="grey_font">&emsp;# Output: 97</span>)</p>
+							</div>	
+							<li class="sub_list">chr(): Returns the character that represents a specified Unicode code point</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="yellow_font">chr</span>(<span class="orange_font">97</span>)<span class="grey_font">&emsp;# Output: 'a'</span>)</p>
+							</div>
+						</ul>
+					</li>
+					<li><b>Indexing:</b> Accessing individual characters in a string using their positions (indices)
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>text = <span class="green_font">"Python"</span>)</p>
+								<p>first_char = text[<span class="orange_font">0</span>] &emsp;<span class="grey_font"># Output: 'P'</span>
+							</div>
+						</ul>
+					</li>
+					<li><b>Slicing:</b> Extracting parts of a string using a range of indices
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>substring = text[<span class="orange_font">1</span>:<span class="orange_font">4</span>]<span class="grey_font">&emsp;# Output: 'yth'</span>)</p>
+							</div>
+						</ul>
+					</li>
+					<li><b>Immutability:</b> Strings in Python cannot be changed after they are created. Any operation that modifies a string creates a new string</li>
+					<li><b>Iterating Through Strings:</b> Using loops to go through each character in a string
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="blue_font">for</span> char<span class="blue_font"> in</span>text:</p>
+								<p>&emsp;<span class="yellow_font">print</span>(char)</p>
+							</div>
+						</ul>
+					<li><b>Concatenating:</b> Joining strings together using the + operator
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>text1 = <span class="green_font">"Hello"</p>
+								<p>text2 = <span class="green_font">"World"</p>
+								<p>result = text1 + <span class="green_font">" "</span> + text2 &emsp;<span class="grey_font"># Output: 'Hello World'</span></p>
+							</div>
+						</ul>
+					</li>
+					<li><b>Multiplying:</b> Repeating a string multiple times using the * operator
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>text = <span class="green_font">"Ha"</span></p>
+								<p>result = text * <span class="orange_font">3 &emsp;</span><span class="grey_font"># Output: 'HaHaHa'</span></p>
+							</div>
+						</ul>
+					</li>
+					<li><b>Comparing:</b> Comparing strings and numbers using comparison operators
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"apple"</span> == <span class="green_font">"apple"</span> &emsp;<span class="grey_font"># Output: True</span></p>
+								<p><span class="green_font">"apple"</span> > <span class="green_font">"apple"</span> &emsp;<span class="grey_font"># Output: False</span></p>
+							</div>
+						</ul>
+					</li>
+					<li><b>Operators:</b>
+						<ul>
+							<li class="sub_list">in: Checks if a substring exists within a string</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"Py"</span><span class="blue_font"> in</span><span class="green_font">"Python"</span><span class="grey_font">&emsp;# Output: True</span></p>
+							</div>	
+							<li class="sub_list">not in: Checks if a substring does not exist within a string</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"Java"</span><span class="blue_font"> not in</span><span class="green_font"> "Python"</span><span class="grey_font">&emsp;# Output: True</span></p>
+							</div>
+						</ul>
+					</li>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>Employ Built-in String Methods</h3>
+				<ul>
+					<li><b>Methods:</b> 
+						<ul>
+							<li class="sub_list">.isxxx(): Various methods to check the nature of strings (e.g., isalpha(), isdigit())</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"123"</span>.isdigit() &emsp;<span class="grey_font"># Output: True</span></p>
+							</div>
+							<li class="sub_list">.join(): Joins elements of a list into a single string with a specified separator</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"-"</span>.join([<span class="green_font">"2024"</span>, <span class="green_font">"12"</span>, <span class="green_font">"19"</span>]) &emsp;<span class="grey_font"># Output: '2024-12-19'</span></p>
+							</div>
+							<li class="sub_list">.split(): Splits a string into a list based on a specified delimiter</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"a,b,c"</span>.split(<span class="green_font">","</span>) &emsp;<span class="grey_font"># Output: ['a', 'b', 'c']</span></p>
+							</div>	
+							<li class="sub_list">.sort(): Sorts the elements of a list in place</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>words = [<span class="green_font">"banana"</span>, <span class="green_font">"apple"</span>, <span class="green_font">"cherry"</span>]</p>
+								<p>words.sort()</p>
+								<p><span class="grey_font"># words is now ['apple', 'banana', 'cherry']</span></p>
+							</div>
+							<li class="sub_list">sorted(): Returns a new list that is sorted</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>words = [<span class="green_font">"banana"</span>, <span class="green_font">"apple"</span>, <span class="green_font">"cherry"</span>]</p>
+								<p>sorted_words = sorted(words)</p>
+								<p><span class="grey_font"># sorted_words is ['apple', 'banana', 'cherry']</span></p>
+							</div>	
+							<li class="sub_list">.index(): Returns the first occurrence of a substring in a string</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"hello"</span>.index(<span class="green_font">"e"</span>) &emsp;<span class="grey_font"># Output: 1</span></p>
+							</div>	
+							<li class="sub_list">.find(): Returns the first occurrence of a substring in a string, or -1 if not found</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"hello"</span>.find(<span class="green_font">"e"</span>) &emsp;<span class="grey_font"># Output: 1</span></p>
+							</div>	
+							<li class="sub_list">.rfind(): Returns the last occurrence of a substring in a string, or -1 if not found</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="green_font">"hello"</span>.rfind(<span class="green_font">"l"</span>) &emsp;<span class="grey_font"># Output: 3</span></p>
+							</div>								
+						</ul>
+					</li>
+				</ul>
+			</div>					
+		<div>
+	</div>
+</body>
+</html>
