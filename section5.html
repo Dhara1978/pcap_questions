@@ -37,82 +37,133 @@
 					</div>
 				<ul>
 				</ul>	
-				<h3>Employ class and object properties</h3>
+				<h3>Embed Lambda Functions into the Code</h3>
 				<ul>
-					<li><b>Instance vs. Class Variables:</b>
+					<li><b>Lambdas: Defining and Using Lambdas</b>
 						<ul>
-							<li>Instance variables are unique to each object</li>
-							<li>Class variables are shared among all instances of a class</li>
+							<li>Lambda functions are small anonymous functions defined with the lambda keyword</li>
+							<li>Syntax: lambda arguments: expression</li>
+							<li>Example: add = lambda x, y: x + y creates a function that adds two numbers</li>
 						</ul>
 					</li>
-					<li><b>The __dict__ Property:</b>
+					<li><b>Self-Defined Functions Taking Lambdas as Arguments</b>
 						<ul>
-							<li class="sub_list">For objects, it holds all instance attributes</li>
-							<li class="sub_list">For classes, it holds class-level attributes</li>
+							<li class="sub_list">Functions can take other functions as arguments, including lambda functions</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="blue_font">def </span><span class="purple_font">apply_function</span>(f, value):</p>
+								<p>&emsp;<span class="blue_font">return </span> f(value)</p><br>
+								<p><span class="yellow_font">print</span>(apply_function(<span class="blue_font">lambda</span> x: x * <span class="orange_font">2</span>, <span class="orange_font">5</span>)) &emsp;<span class="grey_font"># Output: 10</span></p>
+							</div>							
 						</ul>
 					</li>
-					<li><b>Private Components:</b>
+					<li><b>Functions: map(), filter()</b>
 						<ul>
-							<li class="sub_list">Instances: Prefixed with __, they are inaccessible from outside the class</li>
-							<li class="sub_list">Classes: Similar to instance attributes but on a class level</li>
-						</ul>					
+							<li class="sub_list">map(): Applies a function to all items in an iterable</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>nums = [<span class="orange_font">1</span>,<span class="orange_font">2</span>,<span class="orange_font">3</span>,<span class="orange_font">4</span>]</p>
+								<p>doubled = <span class="yellow_font">list</span>(<span class="yellow_font">map</span>(<span class="blue_font">lambda</span> x: x * <span class="orange_font">2</span>, nums)) &emsp;<span class="grey_font"># Output: [2, 4, 6, 8]</span></p>
+							</div>	
+							<li class="sub_list">filter(): Filters items in an iterable based on a function returning True or False</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>nums = [<span class="orange_font">1</span>,<span class="orange_font">2</span>,<span class="orange_font">3</span>,<span class="orange_font">4</span>]</p>
+								<p>doubled = <span class="yellow_font">list</span>(<span class="yellow_font">filter</span>(<span class="blue_font">lambda</span> x: x % <span class="orange_font">2</span>, nums)) &emsp;<span class="grey_font"># Output: [2, 4]</span></p>
+							</div>								
+						</ul>
 					</li>
-					<li><b>Name Mangling:</b> Internally changes private attribute names to avoid conflicts</li>
-				</ul>
 			</div>
 			<div class="section_notes">
-				<h3>Equip a class with methods</h3>
+				<h3>Define and Use Closures</h3>
 				<ul>
-					<li><b>Declaring and Using Methods:</b> Define functions within a class that operate on its instances</li>
-					<li><b>The self Parameter:</b> Refers to the instance calling the method</li>
+					<li><b>Closures: Meaning and Rationale</b>
+						<ul>
+							<li class="sub_list">A closure is a function that remembers the values from its enclosing scope even if that scope has finished executing</li>
+							<li class="sub_list">Useful for data encapsulation and managing state across function calls</li>
+						</ul>
+					</li>
+					<li><b>Defining and Using Closures</b>
+						<ul>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="blue_font">def </span><span class="purple_font">make_multiplier</span>(n):</p>
+								<p>&emsp;<span class="blue_font">def </span><span class="purple_font">multiplier</span>(x):</p>
+								<p>&emsp;&emsp;<span class="blue_font">return </span> x * n</p>
+								<p>&emsp;<span class="blue_font">return </span> multiplier</p><br>
+								<p>doubler = make_multiplier(<span class="orange_font">2</span>)</p>
+								<p><span class="yellow_font">print</span>(doubler(<span class="orange_font">5</span>)) &emsp;<span class="grey_font"># Output: 10</span></p>
+							</div>
+						</ul>
+					</li>
 				</ul>
 			</div>	
 			<div class="section_notes">
-				<h3>Discover the class structure</h3>
+				<h3>Understand Basic Input/Output Terminology</h3>
 				<ul>
-					<li><b>Introspection:</b> Examining the properties and capabilities of an object at runtime</li>
-					<li><b>The hasattr() Function:</b> Checks if an object has a particular attribute</li>
-					<li><b>Properties:</b> 
+					<li><b>I/O Modes</b> 
 						<ul>
-							<li class="sub_list">__name__: The name of the class</li>
-							<li class="sub_list">__module__: The module in which the class is defined</li>
-							<li class="sub_list">__bases__: A tuple of base classes</li>
+							<li class="sub_list">Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary), 't' (text)</li>
+						</ul>
+					</li>
+					<li><b>Predefined Streams</b> 
+						<ul>
+							<li class="sub_list">Standard input (sys.stdin), output (sys.stdout), and error (sys.stderr)</li>
+						</ul>
+					</li>
+					<li><b>Handles vs. Streams</b> 
+						<ul>
+							<li class="sub_list">Handles: References to open files</li>
+							<li class="sub_list">Streams: Data flows (e.g., input or output)</li>
+						</ul>
+					</li>
+					<li><b>Text vs. Binary Modes</b> 
+						<ul>
+							<li class="sub_list">Text mode: Reads and writes strings</li>
+							<li class="sub_list">Binary mode: Reads and writes bytes</li>
 						</ul>
 					</li>
 				</ul>
-			</div>	
+			</div>			
 			<div class="section_notes">
-				<h3>Build a class hierarchy using inheritance</h3>
+				<h3>Perform Input/Output Operations</h3>
 				<ul>
-					<li><b>Single and Multiple Inheritance:</b> Inheriting from one or multiple classes</li>
-					<li><b>The isinstance() Function:</b> Checks if an object is an instance of a class or a tuple of classes</li>
-					<li><b>Overriding:</b> Redefining a method in a subclass</li>
-					<li><b>Operators:</b> 
+					<li><b>The open() Function</b> 
 						<ul>
-							<li class="sub_list">not is: Checks if two variables do not reference the same object.</li>
-							<li class="sub_list">is: Checks if two variables reference the same object</li>
+							<li class="sub_list">Opens a file and returns a file object</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>file = <span class="yellow_font">open</span>(<span class="green_font">'example.txt'</span>,<span class="green_font">'r'</span>)</p>
+							</div>	
 						</ul>
 					</li>
-					<li><b>Polymorphism:</b> Methods can perform different tasks based on the object calling them</li>
-					<li><b>Overriding the __str__() Method:</b> Customizes the string representation of an object</li>
-					<li><b>Diamonds:</b> Refers to the Diamond Problem in multiple inheritance
+					<li><b>The errno Variable and Its Values</b> 
 						<ul>
-							<li><b>Imagine you have four classes in the following hierarchy:</b></li>
-							<li class="sub_list"><b>Class A:</b> The top-level base class</li>
-							<li class="sub_list"><b>Class B</b> and <b>Class C:</b> Both inherit from A</li>
-							<li class="sub_list"><b>Class D:</b> Inherits from both B and C</li>
-							<li><b>Problem Description</b></li>
-							<li>The issue arises when Class D tries to access methods or attributes that are defined in</li>
-							<li>Class A. Because D inherits from both B and C, and both B and C inherit from</li>
-							<li>A, there can be ambiguity in which version of the method or attribute to use from A</li>
+							<li class="sub_list">errno: Standard error numbers in the errno module</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p><span class="blue_font">import</span> errno</p>
+							</div>	
+						</ul>
+					</li>	
+					<li><b>Functions: close(), .read(), .write(), .readline(), readlines()</b> 
+						<ul>
+							<li class="sub_list">close(): Closes the file</li>
+							<li class="sub_list">.read(): Reads the entire file</li>
+							<li class="sub_list">.write(): Writes data to the file</li>
+							<li class="sub_list">.readline(): Reads a single line</li>
+							<li class="sub_list">readlines(): Reads all lines and returns them as a list</li>
 						</ul>
 					</li>
-				</ul>
-			</div>
-			<div class="section_notes">
-				<h3>Construct and initialize objects</h3>
-				<ul>
-					<li><b>Declaring and Invoking Constructors:</b> Special methods (__init__) that initialize object attributes</li>
+					<li><b>Using bytearray as Input/Output Buffer</b> 
+						<ul>
+							<li class="sub_list">bytearray: Mutable sequence of bytes</li>
+							<p>Example:</p>
+							<div class="code_example">
+								<p>data = <span class="yellow_font">bytearray</span>(<span class="orange_font">5</span>)&emsp;<span class="grey_font"># Creates a bytearray of size 5</span></p>
+							</div>	
+						</ul>
+					</li>					
 				</ul>
 			</div>		
 		<div>
