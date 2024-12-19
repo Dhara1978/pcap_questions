@@ -447,6 +447,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionContainer = document.createElement('div');
     questionContainer.classList.add('question-container');
 
+    const questionNumber = document.createElement('h3');
+    questionNumber.textContent = `Question ${index + 1}`;
+    questionContainer.appendChild(questionNumber);
+	
     const questionElement = document.createElement('h2');
     questionElement.innerHTML = q.question;
     questionContainer.appendChild(questionElement);
@@ -497,6 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score++;
       } else {
             incorrectQuestions.push({
+				questionNumber: index + 1,
                 question: q.question,
                 userAnswer: selectedValues,
                 correctAnswer: q.correct
@@ -507,14 +512,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	
     if (incorrectQuestions.length > 0) {
         const incorrectQuestionsDiv = document.createElement('div');
-        incorrectQuestionsDiv.classList.add('incorrect-questions');
+        incorrectQuestionsDiv.classList.add('incorrect-questions', 'error-message');
         incorrectQuestionsDiv.innerHTML = '<h2>Incorrect Questions:</h2>';
 
         incorrectQuestions.forEach((questionData, index) => {
             const questionDiv = document.createElement('div');
             questionDiv.classList.add('incorrect-question');
             questionDiv.innerHTML = `
-                <p><strong>Question ${index + 1}:</strong> ${questionData.question}</p>
+                <p><strong>Question ${questionData.questionNumber}:</strong> ${questionData.question}</p>
                 <p>Your Answer: ${questionData.userAnswer.join(', ')}</p>
                 <p>Correct Answer: ${questionData.correctAnswer.join(', ')}</p>
             `;

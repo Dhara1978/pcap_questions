@@ -10,7 +10,7 @@ body {
 	border-radius: 25px;
 	}
 
-h1, h2 {
+h1, h2, h3 {
 	padding: 15px;
 	}
 
@@ -157,4 +157,10 @@ button {
 	border-radius: 10px;
 	display: block; 
 	margin: 10px auto; 	
+	}
+	
+.error-message {
+	background-color: #ffdddd; /* Light red background */
+	border: 1px solid red;
+	padding: 10px;
 	}
