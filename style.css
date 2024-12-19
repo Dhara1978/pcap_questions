@@ -136,3 +136,7 @@ img {
 .active {
   background-color: #0D6EFD;
 }
+
+.sub_list {
+	list-style-type: circle;
+	}

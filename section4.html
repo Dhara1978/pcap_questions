@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCAP Index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class = "heading">
+		<h1>Python Institute</h1>
+		<h1>PCAP™ – Certified Associate Python Programmer</h1>
+	</div>
+	<div class="nav_div">
+		<ul class="nav_ul">
+			<li class="nav_li"><a href="index.html">Section 1</a></li>
+			<li class="nav_li"><a href="section2.html">Section 2</a></li>
+			<li class="nav_li"><a href="section3.html">Section 3</a></li>
+			<li class="nav_li"><a href="section4.html" class="active">Section 4</a></li>
+			<li class="nav_li"><a href="section5.html">Section 5</a></li>
+			<li class="nav_li"><a href="questions.html">Take a Test</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h2>Section 4: Object-Oriented Programming (34%)</h2>
+		<div>
+			<div class="section_notes">
+				<h3>Understand the Object-Oriented approach</h3>
+				<ul>
+					<li><b>Class:</b> A blueprint for creating objects</li>
+					<li><b>Object:</b> An instance of a class</li>
+					<li><b>Property:</b> Characteristics of an object</li>
+					<li><b>Method:</b> Functions defined inside a class</li>
+					<li><b>Encapsulation:</b> Bundling data and methods within a class</li>
+					<li><b>Inheritance:</b> Mechanism where one class inherits properties and methods from another</li>
+					<li><b>Superclass:</b> The class being inherited from</li>
+					<li><b>Subclass:</b> The class that inherits from the superclass</li>
+					<li><b>Identifying class components:</b> Recognizing attributes and methods in a class</li>
+				<ul>
+				</ul>	
+				<h3>Employ class and object properties</h3>
+				<ul>
+					<li><b>Instance vs. Class Variables:</b>
+						<ul>
+							<li>Instance variables are unique to each object</li>
+							<li>Class variables are shared among all instances of a class</li>
+						</ul>
+					</li>
+					<li><b>The __dict__ Property:</b>
+						<ul>
+							<li class="sub_list">For objects, it holds all instance attributes</li>
+							<li class="sub_list">For classes, it holds class-level attributes</li>
+						</ul>
+					</li>
+					<li><b>Private Components:</b>
+						<ul>
+							<li class="sub_list">Instances: Prefixed with __, they are inaccessible from outside the class</li>
+							<li class="sub_list">Classes: Similar to instance attributes but on a class level</li>
+						</ul>					
+					</li>
+					<li><b>Name Mangling:</b> Internally changes private attribute names to avoid conflicts</li>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>Equip a class with methods</h3>
+				<ul>
+					<li><b>Declaring and Using Methods:</b> Define functions within a class that operate on its instances</li>
+					<li><b>The self Parameter:</b> Refers to the instance calling the method</li>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>Discover the class structure</h3>
+				<ul>
+					<li><b>Introspection:</b> Examining the properties and capabilities of an object at runtime</li>
+					<li><b>The hasattr() Function:</b> Checks if an object has a particular attribute</li>
+					<li><b>Properties:</b> 
+						<ul>
+							<li class="sub_list">__name__: The name of the class</li>
+							<li class="sub_list">__module__: The module in which the class is defined</li>
+							<li class="sub_list">__bases__: A tuple of base classes</li>
+						</ul>
+					</li>
+				</ul>
+			</div>	
+			<div class="section_notes">
+				<h3>Build a class hierarchy using inheritance</h3>
+				<ul>
+					<li><b>Single and Multiple Inheritance:</b> Inheriting from one or multiple classes</li>
+					<li><b>The isinstance() Function:</b> Checks if an object is an instance of a class or a tuple of classes</li>
+					<li><b>Overriding:</b> Redefining a method in a subclass</li>
+					<li><b>Operators:</b> 
+						<ul>
+							<li class="sub_list">not is: Checks if two variables do not reference the same object.</li>
+							<li class="sub_list">is: Checks if two variables reference the same object</li>
+						</ul>
+					</li>
+					<li><b>Polymorphism:</b> Methods can perform different tasks based on the object calling them</li>
+					<li><b>Overriding the __str__() Method:</b> Customizes the string representation of an object</li>
+					<li><b>Diamonds:</b> Refers to the Diamond Problem in multiple inheritance
+						<ul>
+							<li><b>Imagine you have four classes in the following hierarchy:</b></li>
+							<li class="sub_list"><b>Class A:</b> The top-level base class</li>
+							<li class="sub_list"><b>Class B</b> and <b>Class C:</b> Both inherit from A</li>
+							<li class="sub_list"><b>Class D:</b> Inherits from both B and C</li>
+							<li><b>Problem Description</b></li>
+							<li>The issue arises when Class D tries to access methods or attributes that are defined in</li>
+							<li>Class A. Because D inherits from both B and C, and both B and C inherit from</li>
+							<li>A, there can be ambiguity in which version of the method or attribute to use from A</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="section_notes">
+				<h3>Construct and initialize objects</h3>
+				<ul>
+					<li><b>Declaring and Invoking Constructors:</b> Special methods (__init__) that initialize object attributes</li>
+				</ul>
+			</div>		
+		<div>
+	</div>
+</body>
+</html>
