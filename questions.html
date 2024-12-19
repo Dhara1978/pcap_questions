@@ -496,13 +496,32 @@ document.addEventListener('DOMContentLoaded', () => {
       if (q.correct.every(value => selectedValues.includes(value)) && selectedValues.length === q.correct.length) {
         score++;
       } else {
-            incorrectQuestions.push(index + 1); // Add incorrect question number to the array
+            incorrectQuestions.push({
+                question: q.question,
+                userAnswer: selectedValues,
+                correctAnswer: q.correct
+            });
 			}
     });
     alert(`Your score is ${score} out of ${selectedQuestions.length}`);
 	
     if (incorrectQuestions.length > 0) {
-        alert(`You answered the following questions incorrectly: ${incorrectQuestions.join(', ')}`);
+        const incorrectQuestionsDiv = document.createElement('div');
+        incorrectQuestionsDiv.classList.add('incorrect-questions');
+        incorrectQuestionsDiv.innerHTML = '<h2>Incorrect Questions:</h2>';
+
+        incorrectQuestions.forEach((questionData, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('incorrect-question');
+            questionDiv.innerHTML = `
+                <p><strong>Question ${index + 1}:</strong> ${questionData.question}</p>
+                <p>Your Answer: ${questionData.userAnswer.join(', ')}</p>
+                <p>Correct Answer: ${questionData.correctAnswer.join(', ')}</p>
+            `;
+            incorrectQuestionsDiv.appendChild(questionDiv);
+        });
+
+        document.body.appendChild(incorrectQuestionsDiv);
     }
     	
   });
